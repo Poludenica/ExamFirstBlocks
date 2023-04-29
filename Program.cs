@@ -3,6 +3,8 @@
 // либо задать на старте выполнения алгоритма.
 //  При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
+// Первый вариант с вводом от пользователя:
+/*
 string[] CreateArray()
 {
     Console.Write("Input the array size: ");
@@ -40,12 +42,45 @@ string[] ResultArray(string[] array)
     }
     return arrayRes;
 }
-string[] arrayFaсt = CreateArray();
+string[] arrayFirst = CreateArray();
 Console.WriteLine();
 Console.WriteLine("The created array:");
-ShowArray(arrayFaсt);
+ShowArray(arrayFirst);
 Console.WriteLine();
-string[] arrayRes = ResultArray(arrayFaсt);
+string[] arraySecond = ResultArray(arrayFirst);
 Console.WriteLine("A new array of strings that are less than or equal to 3 characters long:");
-ShowArray(arrayRes);
+ShowArray(arraySecond);
+*/
 
+// Второй вариант с уже заданным массивом:
+/*
+string[] arrayFirst = new string[6] {"123", "23", "hello", "world", "Peace", "computer-science"};
+Console.WriteLine("An array is defined: ");
+string[] arraySecond = new string[arrayFirst.Length];
+void SecondArray(string[] arrayFirst, string[] arraySecond)
+{
+    int count = 0;
+    for (int i = 0; i < arrayFirst.Length; i++)
+    {
+    if(arrayFirst[i].Length <= 3)
+        {
+        arraySecond[count] = arrayFirst[i];
+        count++;
+        }
+    }
+}
+void ShowArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+ShowArray(arrayFirst);
+Console.WriteLine();
+SecondArray(arrayFirst, arraySecond);
+Console.WriteLine("A new array of strings that are less than or equal to 3 characters long: ");
+ShowArray(arraySecond);
+*/
